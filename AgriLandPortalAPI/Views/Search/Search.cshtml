@@ -1,0 +1,115 @@
+﻿@model IList<DackAssignment.Models.DepartmentSearch>
+
+@using (Html.BeginForm("Index", "Search", FormMethod.Post)) {
+
+<div class="well well-lg" style="padding-top:15px; padding-bottom: 20px;">
+    <div class="form-row">
+        <div class="col-3">
+            @*@Html.TextBoxFor(account => account.lastName, new { Class="form-control" })*@
+            <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last name">
+        </div>
+        <div class="col-3">
+            @*@Html.TextBoxFor(account => account.deptName, new { Class="form-control" })*@
+            <input type="text" class="form-control" id="deptName" name="deptName" placeholder="Department name">
+        </div>
+        <div class="col-3">
+            @*@Html.TextBoxFor(account => account.subDeptName, new { Class="form-control" })*@
+            <input type="text" class="form-control" id="subDeptName" name="subDeptName" placeholder="Sub Department name">
+        </div>
+        <div class="col-3">
+
+            <input type="submit" class="btn btn-primary" value="Submit"  />
+
+            
+        </div>
+    </div>
+</div> 
+
+@*<div class="card-group">*@
+@for(int i=0; i < Model.Count(); i++)
+{
+
+@*<div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-block">
+                        <h1 class="card-text good-review-score float-left">8.0</h1>
+                        <h4 class="card-title">Card on the Left 1</h4>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    </div>
+                    <div class="card-footer">
+                        <p class="card-text text-right">Footer Text - Possible Link Out</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-block">
+                        <h1 class="card-text good-review-score float-left">8.0</h1>
+                        <h4 class="card-title">Card on the Right 1</h4>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    </div>
+                    <div class="card-footer">
+                        <p class="card-text text-right">Footer Text - Possible Link Out</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>*@
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="row no-gutters">
+                    <div class="col-auto">
+                        <img src="//placehold.it/200" class="rounded-circle" alt="">
+                    </div>
+                    <div class="col">
+                        <div class="card-block px-2">
+                            <h4 class="card-title green"> @Html.DisplayFor(m => m[i].FirstName)</h4>
+                            <p class="card-text"> @Html.DisplayFor(m => m[i].SubDepartmentName)</p>
+                            <p class="card-text"> @Html.DisplayFor(m => m[i].Bio)</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="col-md-12 col-sm-12 center-col ">
+                        <a href="#" class="btn social-icon button" data-abc="true"><i class="fa fa-facebook btn-round"></i></a>
+                        <a href="#" class="btn social-icon button" data-abc="true"><i class="fa fa-twitter btn-round"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @*<div class="col-md-6">
+
+                <div class="card">
+                    <div class="row no-gutters">
+                        <div class="col-auto">
+                            <img src="//placehold.it/200" class="img-fluid" alt="">
+                        </div>
+                        <div class="col">
+                            <div class="card-block px-2">
+                                <h4 class="card-title"> @Html.DisplayFor(m => m[i+1].FirstName)</h4>
+                                <p class="card-text"> @Html.DisplayFor(m => m[i+1].Bio)</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer w-100 text-muted">
+                        <a href="#" class="btn btn-primary">BUTTON</a>
+                    </div>
+                </div>
+            </div>*@
+    </div>
+</div>
+
+            }
+
+}
+
